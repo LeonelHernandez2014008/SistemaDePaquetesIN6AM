@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.leonelhernandez.sistemaDePaquetes.bean.Envio" table="envio">
+	    <id name="idEnvio" type="java.lang.Integer">
+            <column name="idEnvio" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="idNotificacion" class="org.leonelhernandez.sistemaDePaquetes.bean.Notificacion">
+        	<column name="idNotificacion"></column>
+        </many-to-one>
+        
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	  <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+	  <property name="hibernate.connection.username">SistemaDePaquetes</property>
+	  <property name="hibernate.connection.password">123</property>
+	  <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property> 
+	  <property name="hibernate.connection.charSet">utf-8</property> 
+	   <property name="show_sql">true</property>
+	       <!-- JDBC connection pool (use the built-in) 
+	   <property name="connection.pool_size">10</property>
+	   -->
+		<!-- configuration pool via c3p0--> 
+		<property name="connection.provider_class">
+	    	org.hibernate.connection.C3P0ConnectionProvider
+		</property>
+		<property name="c3p0.acquire_increment">1</property> 
+		<property name="c3p0.idle_test_period">3000</property> <!-- SEGUNDOS--> 
+		<property name="c3p0.max_size">100</property> 
+		<property name="c3p0.max_statements">100</property> 
+		<property name="c3p0.min_size">10</property> 
+		<property name="c3p0.timeout">3000</property> <!-- SEGUNDOS --> 
+		<!-- DEPRECATED very expensive property name="c3p0.validate>--> 
+	  
+        <mapping class="Rol" package="org.leonelhernandez.sistemaDePaquetes.bean" resource="org/leonelhernandez/sistemaDePaquetes/bean/Rol.hbm.xml"/> 
+	    <mapping class="Usuario" package="org.leonelhernandez.sistemaDePaquetes.bean" resource="org/leonelhernandez/sistemaDePaquetes/bean/Usuario.hbm.xml"/>
+	    <mapping class="Paquete" package="org.leonelhernandez.sistemaDePaquetes.bean" resource="org/leonelhernandez/sistemaDePaquetes/bean/Paquete.hbm.xml"/>
+	    <mapping class="TipoPaquete" package="org.leonelhernandez.sistemaDePaquetes.bean" resource="org/leonelhernandez/sistemaDePaquetes/bean/TipoPaquete.hbm.xml"/>
+	    <mapping class="Envio" package="org.leonelhernandez.sistemaDePaquetes.bean" resource="org/leonelhernandez/sistemaDePaquetes/bean/Envio.hbm.xml"/>
+	    <mapping class="Notificacion" package="org.leonelhernandez.sistemaDePaquetes.bean" resource="org/leonelhernandez/sistemaDePaquetes/bean/Notificacion.hbm.xml"/>	  
+	  
+	</session-factory>
+</hibernate-configuration>

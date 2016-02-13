@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.leonelhernandez.sistemaDePaquetes.bean.Paquete" table="paquete">
+	    <id name="idPaquete" type="java.lang.Integer">
+            <column name="idPaquete" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombrePaquete" type="java.lang.String">
+            <column name="nombrePaquete" />
+        </property>
+        <many-to-one name="idEnvio" class="org.leonelhernandez.sistemaDePaquetes.bean.Envio">
+        	<column name="idEnvio"></column>
+        </many-to-one>
+        <many-to-one name="idUsuario" class="org.leonelhernandez.sistemaDePaquetes.bean.Usuario">
+        	<column name="idUsuario"></column>
+        </many-to-one>
+        <property name="fechaEntrega" type="java.lang.String">
+            <column name="fechaEntrega" />
+        </property>
+        <property name="fechaEnvio" type="java.lang.String">
+            <column name="fechaEnvio" />
+        </property>
+        <property name="lugarDeEntrega" type="java.lang.String">
+            <column name="lugarDeEntrega" />
+        </property>
+        
+	</class>
+</hibernate-mapping>
